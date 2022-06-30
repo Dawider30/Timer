@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body {
+    background-color: #a8d9f9;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    color: rgb(37, 37, 37);
+}
+
+header{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+input[type=number] {
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    appearance: none;
+}
+.buttons {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#start{
+    font-size: 1.7rem;
+    background-color: green;
+    border: none;
+    border-radius: 7px;
+    margin: 5px 10px;
+    padding: 5px 10px;
+}
+#start:hover {
+    color: rgb(39, 39, 39);
+    background-color: rgb(2, 173, 2);
+}
+
+#stop{
+    font-size: 1.7rem;
+    background-color: red;
+    border: none;
+    border-radius: 7px;
+    margin: 5px 10px;
+    padding: 5px 10px;
+}
+
+#stop:hover {
+    color: rgb(39, 39, 39);
+    background-color: rgb(255, 51, 51);
+}
+#countdown {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 4rem;
+}
