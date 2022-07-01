@@ -1,21 +1,29 @@
-let check = null
-
-
 document.addEventListener("change", getValue)
 
-    let isClicked = false
-
 function getValue(){
-    const timer = document.getElementById('minutesTime').value
 
-    let startingMinutes = Math.round(timer)
+//Zdobywanie informacji o czasie
 
-    let time = startingMinutes * 60;
+const timer = document.getElementById('minutesTime').value
+
+let startingMinutes = Math.round(timer)
+
+let time = startingMinutes * 60;
+
+//Polaczenie JS z HTML
 
 const start = document.getElementById('start')
 const stop = document.getElementById('stop')
+const reset = document.getElementById('reset')
 
 const countdownEl = document.getElementById('countdown')
+
+//flagi
+
+let isClicked = false
+let check = null
+
+//funkcje przycisków
 
 start.addEventListener('click', () => {
 
@@ -25,6 +33,15 @@ start.addEventListener('click', () => {
         
       check = setInterval(updateCountdown, 1000)}
       })
+stop.addEventListener('click', () => {
+        clearInterval(check)
+        check = null
+        countdownEl.innerText = 'stoped'
+        isClicked = false
+    })
+reset.addEventListener('click', () => {
+        window.location.reload()
+    })
 
 function updateCountdown() {
 
@@ -33,7 +50,7 @@ function updateCountdown() {
         setTimeout(() => {
             window.location.reload()
             
-        }, 6000);
+        }, 5000);
         return
     }
 
@@ -45,16 +62,7 @@ function updateCountdown() {
     countdownEl.innerText = `${minutes}:${seconds}`
 
     time--;
-    
-
 }
-stop.addEventListener('click', () => {
-    clearInterval(check)
-    check = null
-    countdownEl.innerText = 'stoped'
-    isClicked = false
-})
-
 }
 
 
